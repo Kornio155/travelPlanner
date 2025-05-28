@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="travelPlanner.MainWindow">
+
+
+        <ScrollViewer>
+            <StackPanel HorizontalAlignment="Center">
+                
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                    <StackPanel>
+                        <TextBlock>
+                            Poniższy formularz pomoze Ci zrobic plan wyjazdu. Moze nie jest bardzo dokladny ale za to jest pomocny.
+                        </TextBlock>
+                        <TextBlock>
+                            Wystarczy wypełnić poniższay formularz i kliknac przycisk na samym dole a planer przygotuje skrot tego.                            
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+                
+                <TextBox x:Name="dane" Watermark="Podaj imie i nazwisko" Width="160" BorderBrush="Black" BorderThickness="2"/>
+                
+                <Border Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                    <ComboBox x:Name="kraj" SelectedIndex="0" Width="140">
+                        <ComboBoxItem Content="Wybierz kraj"/>
+                        <ComboBoxItem Content="Polska"/>
+                        <ComboBoxItem Content="Włochy"/>
+                        <ComboBoxItem Content="Hiszpania"/>
+                        <ComboBoxItem Content="Słowacja"/>
+                        <ComboBoxItem Content="Czechy"/>
+                        <ComboBoxItem Content="Niemcy"/>
+                        <ComboBoxItem Content="Austria"/>
+                    </ComboBox>
+                </Border>
+        
+        
+                <Border Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="Wybierz co chcesz zobaczyc"/>
+                                        
+                        <CheckBox x:Name="muzea" Content="Muzea"/>
+                        <CheckBox x:Name="filharmonie" Content="Filharmonie"/>
+                        <CheckBox x:Name="kina" Content="Kina"/>
+                        <CheckBox x:Name="parki" Content="Parki"/>
+                        <CheckBox x:Name="zabytki" Content="Zabytki"/>
+                        <CheckBox x:Name="stadiony" Content="Stadiony"/>
+                    </StackPanel>
+                </Border>
+        
+                <Border Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="Wybierz srodek trnasportu"/>
+                                    
+                        <RadioButton Content="Samochod" GroupName="trasnsport"/>
+                        <RadioButton Content="Pociag" GroupName="trasnsport"/>
+                        <RadioButton Content="Samolot" GroupName="trasnsport"/>
+                        <RadioButton Content="Statek" GroupName="trasnsport"/>
+                    </StackPanel>
+                </Border>
+                <Button x:Name="dalej" Content="Kliknij aby przygotowac plan"
+                        Width="210" Height="40" Padding="10" HorizontalAlignment="Center"
+                        Background="CadetBlue" Foreground="Aquamarine" CornerRadius="5"
+                />
+            </StackPanel>
+        </ScrollViewer>
+
+</Window>
