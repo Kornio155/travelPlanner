@@ -7,9 +7,9 @@
 
 
         <ScrollViewer>
-            <StackPanel HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Background="DarkSlateGray">
                 
-                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                <Border Background="CadetBlue" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
                     <StackPanel>
                         <TextBlock>
                             Poniższy formularz pomoze Ci zrobic plan wyjazdu. Moze nie jest bardzo dokladny ale za to jest pomocny.
@@ -20,9 +20,9 @@
                     </StackPanel>
                 </Border>
                 
-                <TextBox x:Name="dane" Watermark="Podaj imie i nazwisko" Width="160" BorderBrush="Black" BorderThickness="2"/>
+                <TextBox Background="CadetBlue" x:Name="dane" Watermark="Podaj imie i nazwisko" Width="160" BorderBrush="Black" BorderThickness="2"/>
                 
-                <Border Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                <Border Background="CadetBlue" Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
                     <ComboBox x:Name="kraj" SelectedIndex="0" Width="140">
                         <ComboBoxItem Content="Wybierz kraj"/>
                         <ComboBoxItem Content="Polska"/>
@@ -36,7 +36,7 @@
                 </Border>
         
         
-                <Border Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                <Border Background="CadetBlue" Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
                     <StackPanel>
                         <TextBlock Text="Wybierz co chcesz zobaczyc"/>
                                         
@@ -49,8 +49,8 @@
                     </StackPanel>
                 </Border>
         
-                <Border Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
-                    <StackPanel>
+                <Border Background="CadetBlue" Width="200" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10" Margin="10">
+                    <StackPanel x:Name="TransportPanel">
                         <TextBlock Text="Wybierz srodek trnasportu"/>
                                     
                         <RadioButton Content="Samochod" GroupName="trasnsport"/>
@@ -61,8 +61,18 @@
                 </Border>
                 <Button x:Name="dalej" Content="Kliknij aby przygotowac plan"
                         Width="210" Height="40" Padding="10" HorizontalAlignment="Center"
-                        Background="CadetBlue" Foreground="Aquamarine" CornerRadius="5"
+                        Background="CadetBlue" Foreground="Aquamarine" CornerRadius="5" Click="OnShowPopupClicked"
                 />
+                
+                <Popup Name="okienko" IsOpen="False" PlacementMode="Center" PlacementTarget="{Binding RelativeSource={RelativeSource Self}}">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="Crimson" Padding="20" CornerRadius="5">
+                        <StackPanel>
+                            <TextBlock Text="Twoj plan wycieczki!" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <TextBlock Name="tekstWOkienku" TextWrapping="Wrap"/>
+                            <Button Content="Zamknij Popup" Click="OnClosePopupClicked" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
             </StackPanel>
         </ScrollViewer>
 
