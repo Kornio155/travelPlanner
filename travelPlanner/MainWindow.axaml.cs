@@ -1,9 +1,15 @@
 using System;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
+using Avalonia;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+
 
 namespace travelPlanner;
 
@@ -31,6 +37,38 @@ public partial class MainWindow : Window {
         var kraj = this.FindControl<ComboBox>("kraj");
         
         string selectedContent = (kraj.SelectedItem as ComboBoxItem)?.Content?.ToString();
+        var image = this.FindControl<Image>("foto");
+        var imagePath = selectedContent switch
+        {
+            "Polska" => "Assets/olsztyn.jpg",
+            "Włochy" => "Assets/turyn.jpg",
+            "Hiszpania" => "Assets/madryt.jpg",
+            "Słowacja" => "Assets/slowacja.jpg",
+            "Czechy" => "Assets/brno.jpg",
+            "Niemcy" => "Assets/monachium.jpg",
+            "Austria" => "Assets/austria.jpg",
+            "Wybierz kraj" => "Assets/nie.jpg",
+        };
+
+        var kraje = selectedContent switch
+        {
+            "Polska" => "Polska",
+            "Włochy" => "Włochy",
+            "Hiszpania" => "Hiszpania",
+            "Słowacja" => "Słowacja",
+            "Czechy" => "Czechy",
+            "Niemcy" => "Niemcy",
+            "Austria" => "Austria",
+            "Wybierz kraj" => "Error",
+        };
+
+        if (File.Exists(imagePath))
+        {
+            image.Source = new Bitmap(imagePath);
+        }
+
+
+
 
 
         var muzea = this.FindControl<CheckBox>("muzea").IsChecked;
@@ -114,7 +152,7 @@ public partial class MainWindow : Window {
         {
             if (popupContentTextBlock != null)
             {
-                popupContentTextBlock.Text = $"Twoje imie i nazwisko to: {dane}.\nWybrany kraj docelowy to:  {selectedContent}.\nWybrane atrakcje to: {m} {f} {k} {p} {z} {s}.\nWybrany srodek transportu to: {transport}";
+                popupContentTextBlock.Text = $"Twoje imie i nazwisko to: {dane}.\nWybrany kraj docelowy to:  {kraje}.\nWybrane atrakcje to: {m} {f} {k} {p} {z} {s}.\nWybrany srodek transportu to: {transport}\n ";
             }
 
             popup.IsOpen = true;

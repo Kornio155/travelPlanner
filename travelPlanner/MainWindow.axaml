@@ -15,7 +15,7 @@
                             Poniższy formularz pomoze Ci zrobic plan wyjazdu. Moze nie jest bardzo dokladny ale za to jest pomocny.
                         </TextBlock>
                         <TextBlock>
-                            Wystarczy wypełnić poniższay formularz i kliknac przycisk na samym dole a planer przygotuje skrot tego.                            
+                            Wystarczy go wypełnić i kliknac przycisk na samym dole a planer przygotuje opis wyjazdu.                            
                         </TextBlock>
                     </StackPanel>
                 </Border>
@@ -69,6 +69,7 @@
                         <StackPanel>
                             <TextBlock Text="Twoj plan wycieczki!" FontWeight="Bold" Margin="0,0,0,10"/>
                             <TextBlock Name="tekstWOkienku" TextWrapping="Wrap"/>
+                            <Image x:Name="foto" Width="300" Height="300"/>
                             <Button Content="Zamknij Popup" Click="OnClosePopupClicked" HorizontalAlignment="Center" Margin="0,15,0,0"/>
                         </StackPanel>
                     </Border>

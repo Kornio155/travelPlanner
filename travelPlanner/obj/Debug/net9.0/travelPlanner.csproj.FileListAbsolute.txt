@@ -65,3 +65,11 @@ C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\obj\Debug\net9.0\travel
 C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\obj\Debug\net9.0\travelPlanner.genruntimeconfig.cache
 C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\obj\Debug\net9.0\ref\travelPlanner.dll
 C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\obj\Debug\net9.0\travelPlanner.sourcelink.json
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\austria.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\brno.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\madryt.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\monachium.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\nie.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\olsztyn.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\slowacja.jpg
+C:\Users\korne\RiderProjects\travelPlanner\travelPlanner\bin\Debug\net9.0\Assets\turyn.jpg
